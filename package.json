@@ -2,19 +2,31 @@
   "name": "@fssgis/core",
   "version": "0.0.0",
   "description": "✨【@fssgis/core】JavaScript核心库✨",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "es/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:dev": "tsc -w",
+    "build": "tsc && tsc --outDir ./dist --module CommonJS",
+    "test": "nodemon --exec npx jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fssgis/fssgis-core.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "ngheizit",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fssgis/fssgis-core/issues"
   },
-  "homepage": "https://github.com/fssgis/fssgis-core#readme"
+  "homepage": "https://github.com/fssgis/fssgis-core#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "^7.30.0",
+    "nodemon": "^2.0.12",
+    "rollup-jest": "^1.1.1",
+    "typescript": "^4.3.5"
+  }
 }
