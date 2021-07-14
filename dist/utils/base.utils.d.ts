@@ -39,35 +39,35 @@ export declare function loadCss(cssUrl: string): void;
  */
 export declare function loadJs(jsUrl: string): void;
 /**
-   * 对象扩展（JQuery $.extend 实现代码）
-   * @param _ 深度复制
-   * @param sourceObj 源对象
-   * @param targetObj 目标对象
-   */
+ * 对象扩展（JQuery $.extend 实现代码）
+ * @param _ 深度复制
+ * @param sourceObj 源对象
+ * @param targetObj 目标对象
+ */
 export declare function $extend<T>(_deep: boolean, sourceObj: T, targetObj: T): T;
 /**
-   * 防抖
-   * （当持续触发事件时，
-   * 一定时间段内没有再触发事件，
-   * 事件处理函数才会执行一次，
-   * 如果设定的时间到来之前，
-   * 又一次触发了事件，
-   * 就重新开始延时）
-   * @param fn 函数
-   * @param wait 延时毫秒数
-   * @param immediate 是否立即执行
-   */
+ * 防抖
+ * （当持续触发事件时，
+ * 一定时间段内没有再触发事件，
+ * 事件处理函数才会执行一次，
+ * 如果设定的时间到来之前，
+ * 又一次触发了事件，
+ * 就重新开始延时）
+ * @param fn 函数
+ * @param wait 延时毫秒数
+ * @param immediate 是否立即执行
+ */
 export declare function debounce<T extends Function>(fn: T, wait: number, immediate?: boolean): (T & {
     cancle(): void;
 }) | null;
 /**
-   * 节流
-   * （当持续触发事件时，
-   * 保证一定时间段内只调用一次事件处理函数）
-   * @param fn 函数
-   * @param wait 间隔毫秒数
-   * @param options 配置项
-   */
+ * 节流
+ * （当持续触发事件时，
+ * 保证一定时间段内只调用一次事件处理函数）
+ * @param fn 函数
+ * @param wait 间隔毫秒数
+ * @param options 配置项
+ */
 export declare function throttle<T extends Function>(fn: T, wait: number, options?: {
     leading: boolean;
     trailing: boolean;

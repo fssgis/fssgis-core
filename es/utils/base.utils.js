@@ -34,15 +34,18 @@ export function createIntRandom(minInt, maxInt) {
     return minInt + Math.round(Math.random() * (maxInt - minInt));
 }
 /** 判断网页是否通过移动端设备打开 */
+/* istanbul ignore next */
 export function isFromMobileBrowser() {
     return !!navigator
-        .userAgent
-        .match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+        ?.userAgent
+        ?.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+        ?? false;
 }
 /**
  * 复制文本
  * @param text 文本
  */
+/* istanbul ignore next */
 export async function copyText(text) {
     await navigator.clipboard.writeText(text);
     return text;
@@ -59,6 +62,7 @@ export function getArrayItemRandom(arr) {
  * 加载css
  * @param cssUrl CSS路径
  */
+/* istanbul ignore next */
 export function loadCss(cssUrl) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
@@ -71,17 +75,19 @@ export function loadCss(cssUrl) {
  * 加载js
  * @param jsUrl JS路径
  */
+/* istanbul ignore next */
 export function loadJs(jsUrl) {
     const script = document.createElement('script');
     script.src = jsUrl;
     document.head.appendChild(script);
 }
 /**
-   * 对象扩展（JQuery $.extend 实现代码）
-   * @param _ 深度复制
-   * @param sourceObj 源对象
-   * @param targetObj 目标对象
-   */
+ * 对象扩展（JQuery $.extend 实现代码）
+ * @param _ 深度复制
+ * @param sourceObj 源对象
+ * @param targetObj 目标对象
+ */
+/* istanbul ignore next */
 export function $extend(_deep, sourceObj, targetObj) {
     function isPlainObject(obj) {
         const class2type = {};
@@ -142,17 +148,18 @@ export function $extend(_deep, sourceObj, targetObj) {
     return target;
 }
 /**
-   * 防抖
-   * （当持续触发事件时，
-   * 一定时间段内没有再触发事件，
-   * 事件处理函数才会执行一次，
-   * 如果设定的时间到来之前，
-   * 又一次触发了事件，
-   * 就重新开始延时）
-   * @param fn 函数
-   * @param wait 延时毫秒数
-   * @param immediate 是否立即执行
-   */
+ * 防抖
+ * （当持续触发事件时，
+ * 一定时间段内没有再触发事件，
+ * 事件处理函数才会执行一次，
+ * 如果设定的时间到来之前，
+ * 又一次触发了事件，
+ * 就重新开始延时）
+ * @param fn 函数
+ * @param wait 延时毫秒数
+ * @param immediate 是否立即执行
+ */
+/* istanbul ignore next */
 export function debounce(fn, wait, immediate = false) {
     let handle, ret = null;
     const debounced = function () {
@@ -175,13 +182,14 @@ export function debounce(fn, wait, immediate = false) {
     return debounced; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 /**
-   * 节流
-   * （当持续触发事件时，
-   * 保证一定时间段内只调用一次事件处理函数）
-   * @param fn 函数
-   * @param wait 间隔毫秒数
-   * @param options 配置项
-   */
+ * 节流
+ * （当持续触发事件时，
+ * 保证一定时间段内只调用一次事件处理函数）
+ * @param fn 函数
+ * @param wait 间隔毫秒数
+ * @param options 配置项
+ */
+/* istanbul ignore next */
 export function throttle(fn, wait, options = { leading: true, trailing: true }) {
     let handle, previous = 0;
     const throttled = function () {
@@ -255,6 +263,7 @@ export function parseListField(list, parseFields) {
         return newItem;
     }); // eslint-disable-line @typescript-eslint/no-explicit-any
 }
+/* istanbul ignore next */
 export function whenRightReturn(time, intervalCallback) {
     return new Promise(resolve => {
         const handleId = setInterval(() => {

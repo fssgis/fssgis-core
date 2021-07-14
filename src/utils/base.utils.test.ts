@@ -98,7 +98,7 @@ test('列表转树形结构', () => {
   const tree = baseUtils.listToTree(entries, { checkParentIdCallback: pid => pid !== '0' })
   expect(tree.length).toBe(2)
   // expect(!!(entries[0] as any).children).toBe(false)
-  expect((entries[0] as any).children.length).toBe(2)
+  expect((entries[0] as any).children.length).toBe(2) // eslint-disable-line
 })
 
 test('解析列表', () => {

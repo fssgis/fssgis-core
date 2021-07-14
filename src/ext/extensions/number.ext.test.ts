@@ -40,6 +40,8 @@ test('toCashString() can run', () => {
   expect(ext(100000000).toCashString()).toBe('100,000,000')
 })
 
-test('toDateFormat() can run', () => {
+test('toChineseString() can run', () => {
   expect(ext(100000000).toChineseString()).toBe('一亿')
+  expect(ext(1.1).toChineseString()).toBe('一点一')
+  expect(ext(1.00000001).toChineseString()).toBe('一点零零零零零零零一')
 })

@@ -37,16 +37,19 @@ export function createIntRandom (minInt: number, maxInt: number) : number {
 }
 
 /** 判断网页是否通过移动端设备打开 */
+/* istanbul ignore next */
 export function isFromMobileBrowser () : boolean {
   return !!navigator
-    .userAgent
-    .match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+    ?.userAgent
+    ?.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+    ?? false
 }
 
 /**
  * 复制文本
  * @param text 文本
  */
+/* istanbul ignore next */
 export async function copyText (text: string) : Promise<string> {
   await navigator.clipboard.writeText(text)
   return text
@@ -65,6 +68,7 @@ export function getArrayItemRandom<T> (arr: T[]) : T {
  * 加载css
  * @param cssUrl CSS路径
  */
+/* istanbul ignore next */
 export function loadCss (cssUrl: string) : void {
   const link = document.createElement('link')
   link.rel = 'stylesheet'
@@ -77,6 +81,7 @@ export function loadCss (cssUrl: string) : void {
  * 加载js
  * @param jsUrl JS路径
  */
+/* istanbul ignore next */
 export function loadJs (jsUrl: string) : void {
   const script = document.createElement('script')
   script.src = jsUrl
@@ -84,11 +89,12 @@ export function loadJs (jsUrl: string) : void {
 }
 
 /**
-   * 对象扩展（JQuery $.extend 实现代码）
-   * @param _ 深度复制
-   * @param sourceObj 源对象
-   * @param targetObj 目标对象
-   */
+ * 对象扩展（JQuery $.extend 实现代码）
+ * @param _ 深度复制
+ * @param sourceObj 源对象
+ * @param targetObj 目标对象
+ */
+/* istanbul ignore next */
 export function $extend<T> (_deep: boolean, sourceObj: T, targetObj: T) : T { // eslint-disable-line
   function isPlainObject (obj) {
     const class2type = {}
@@ -154,17 +160,18 @@ export function $extend<T> (_deep: boolean, sourceObj: T, targetObj: T) : T { //
 }
 
 /**
-   * 防抖
-   * （当持续触发事件时，
-   * 一定时间段内没有再触发事件，
-   * 事件处理函数才会执行一次，
-   * 如果设定的时间到来之前，
-   * 又一次触发了事件，
-   * 就重新开始延时）
-   * @param fn 函数
-   * @param wait 延时毫秒数
-   * @param immediate 是否立即执行
-   */
+ * 防抖
+ * （当持续触发事件时，
+ * 一定时间段内没有再触发事件，
+ * 事件处理函数才会执行一次，
+ * 如果设定的时间到来之前，
+ * 又一次触发了事件，
+ * 就重新开始延时）
+ * @param fn 函数
+ * @param wait 延时毫秒数
+ * @param immediate 是否立即执行
+ */
+/* istanbul ignore next */
 export function debounce <T extends Function> (fn: T, wait: number, immediate: boolean = false) : (T & { cancle() : void }) | null { // eslint-disable-line
   let handle, ret = null
   const debounced = function () {
@@ -187,13 +194,14 @@ export function debounce <T extends Function> (fn: T, wait: number, immediate: b
 }
 
 /**
-   * 节流
-   * （当持续触发事件时，
-   * 保证一定时间段内只调用一次事件处理函数）
-   * @param fn 函数
-   * @param wait 间隔毫秒数
-   * @param options 配置项
-   */
+ * 节流
+ * （当持续触发事件时，
+ * 保证一定时间段内只调用一次事件处理函数）
+ * @param fn 函数
+ * @param wait 间隔毫秒数
+ * @param options 配置项
+ */
+/* istanbul ignore next */
 export function throttle<T extends Function> (fn: T, wait: number, options: { // eslint-disable-line
   leading: boolean
   trailing: boolean
@@ -275,6 +283,7 @@ export function parseListField <K, T> (list: T[], parseFields: [keyof T, keyof K
   }) as any // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
+/* istanbul ignore next */
 export function whenRightReturn <T> (time: number, intervalCallback: () => T | undefined) : Promise<T> {
   return new Promise(resolve => {
     const handleId = setInterval(() => {

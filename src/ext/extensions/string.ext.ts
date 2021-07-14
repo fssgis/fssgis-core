@@ -1,5 +1,6 @@
 import extDate from './date.ext'
 
+/* istanbul ignore next */
 export interface IStringExtension {
   trimAll () : string
   toDate () : Date
