@@ -95,3 +95,9 @@ export declare function listToTree<T>(list: T[], options?: {
  */
 export declare function parseListField<K, T>(list: T[], parseFields: [keyof T, keyof K][]): K[];
 export declare function whenRightReturn<T>(time: number, intervalCallback: () => T | undefined): Promise<T>;
+/**
+ * 判断是否为Promise对象
+ * @param obj 对象
+ * @returns 判断结果
+ */
+export declare function isPromise<T>(obj: T): boolean;

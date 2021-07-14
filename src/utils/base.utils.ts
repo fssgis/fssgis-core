@@ -295,3 +295,13 @@ export function whenRightReturn <T> (time: number, intervalCallback: () => T | u
     }, time)
   })
 }
+
+/**
+ * 判断是否为Promise对象
+ * @param obj 对象
+ * @returns 判断结果
+ */
+/* istanbul ignore next */
+export function isPromise<T> (obj: T) : boolean {
+  return obj && Object.prototype.toString.call(obj) === '[object Promise]'
+}

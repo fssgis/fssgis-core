@@ -275,3 +275,12 @@ export function whenRightReturn(time, intervalCallback) {
         }, time);
     });
 }
+/**
+ * 判断是否为Promise对象
+ * @param obj 对象
+ * @returns 判断结果
+ */
+/* istanbul ignore next */
+export function isPromise(obj) {
+    return obj && Object.prototype.toString.call(obj) === '[object Promise]';
+}
