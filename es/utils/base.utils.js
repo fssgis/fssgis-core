@@ -284,3 +284,6 @@ export function whenRightReturn(time, intervalCallback) {
 export function isPromise(obj) {
     return obj && Object.prototype.toString.call(obj) === '[object Promise]';
 }
+export function isNullOrUndefined(obj) {
+    return obj === null || obj === undefined;
+}

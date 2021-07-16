@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isPromise = exports.whenRightReturn = exports.parseListField = exports.listToTree = exports.throttle = exports.debounce = exports.$extend = exports.loadJs = exports.loadCss = exports.getArrayItemRandom = exports.copyText = exports.isFromMobileBrowser = exports.createIntRandom = exports.createGuid = exports.deepCopy = exports.deepCopyJSON = void 0;
+exports.isNullOrUndefined = exports.isPromise = exports.whenRightReturn = exports.parseListField = exports.listToTree = exports.throttle = exports.debounce = exports.$extend = exports.loadJs = exports.loadCss = exports.getArrayItemRandom = exports.copyText = exports.isFromMobileBrowser = exports.createIntRandom = exports.createGuid = exports.deepCopy = exports.deepCopyJSON = void 0;
 /**
  * 深度复制（采用JSON解析方式）
  * @param obj 复制对象
@@ -303,3 +303,7 @@ function isPromise(obj) {
     return obj && Object.prototype.toString.call(obj) === '[object Promise]';
 }
 exports.isPromise = isPromise;
+function isNullOrUndefined(obj) {
+    return obj === null || obj === undefined;
+}
+exports.isNullOrUndefined = isNullOrUndefined;

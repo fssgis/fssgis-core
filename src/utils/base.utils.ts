@@ -305,3 +305,7 @@ export function whenRightReturn <T> (time: number, intervalCallback: () => T | u
 export function isPromise<T> (obj: T) : boolean {
   return obj && Object.prototype.toString.call(obj) === '[object Promise]'
 }
+
+export function isNullOrUndefined <T> (obj: T) : boolean {
+  return obj === null || obj === undefined
+}

@@ -101,3 +101,4 @@ export declare function whenRightReturn<T>(time: number, intervalCallback: () =>
  * @returns 判断结果
  */
 export declare function isPromise<T>(obj: T): boolean;
+export declare function isNullOrUndefined<T>(obj: T): boolean;
